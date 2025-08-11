@@ -91,4 +91,4 @@ Jedes Byte wird in **Hexadezimal**, **Binär** und **ASCII** dargestellt.
 ---
 
 ## 👨‍💻 Autor
-Dieses Projekt wurde im Rahmen des IU-Studiums im Modul „Programmieren mit C++“ erstellt.
+Dieses Projekt wurde im Rahmen des IU-Studiums im Modul „Programmierung mit C/C++“ erstellt.
