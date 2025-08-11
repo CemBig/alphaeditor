@@ -6,25 +6,41 @@ der binäre Dateien **auf Byte-Ebene** anzeigen und bearbeiten kann.
 Jedes Byte wird in **Hexadezimal**, **Binär** und **ASCII** dargestellt.  
 Änderungen in einer Darstellung werden automatisch in die anderen Formate übernommen.
 
-Das Projekt wurde im Rahmen des IU-Portfolios entwickelt.
+---
+
+## 🖥️ Funktionsweise – Kurzanleitung
+1. **Datei laden** (kleine Testdatei, z. B. `.txt` oder Binärdatei)  
+2. Werte in den **Hex-, Binär- oder ASCII-Spalten** bearbeiten  
+   - Änderungen werden automatisch auf die anderen Spalten synchronisiert  
+3. Über das **Suchfeld** gezielt nach Bytes oder Zeichen suchen  
+   - Die Tabelle springt direkt zum ersten Treffer  
+4. Änderungen speichern und Datei erneut laden  
+   - Alle Änderungen bleiben erhalten
 
 ---
 
-## 🖥️ Funktionen
-- **Dateien öffnen und speichern**
-- **Anzeige pro Byte**:
-  - Offset (Speicheradresse)
-  - Hexadezimalwert
-  - Binärwert
-  - ASCII-Zeichen
-- **Direkte Bearbeitung in der Tabelle**
-  - Synchronisierung aller Darstellungen
-  - Eingabevalidierung (nur gültige Werte erlaubt)
-- **Suchfunktion**
-  - Suche nach Zeichen, Hex- oder Binärfolgen
-- **Fehlervermeidung**
-  - Schutz vor ungültigen Eingaben
-  - Verhindern von Endlosschleifen durch Signal-Blockierung
+## 📂 Struktur der Software
+
+### **Hauptmodule**
+- **MainWindow**  
+  - Verwaltet die Benutzeroberfläche und die Interaktion zwischen GUI und Datenmodell  
+  - Funktionen: Datei öffnen, speichern, Suchfunktion, Synchronisierung der Hex-/Binär-/ASCII-Darstellung in der Tabelle  
+  - Enthält die Signal-Slot-Logik für Änderungen in der Tabelle
+
+- **ByteDataModel**  
+  - Datenmodell, das den Inhalt der geöffneten Datei als Liste von ByteData-Objekten speichert  
+  - Schnittstellen zum Laden, Speichern und gezielten Zugriff auf einzelne Bytes
+
+- **ByteData**  
+  - Repräsentiert ein einzelnes Byte  
+  - Methoden zur Umwandlung zwischen **Hexadezimal**, **Binär** und **ASCII**  
+  - Enthält Validierungslogik, um nur gültige Werte zu übernehmen
+
+- **GUI-Dateien (`.ui`, erstellt im Qt Designer)**  
+  - Layout der Benutzeroberfläche  
+  - **QTableWidget** für Byte-Daten  
+  - Buttons für Dateioperationen (Öffnen, Speichern)  
+  - Suchfeld für gezieltes Auffinden von Daten
 
 ---
 
@@ -43,7 +59,7 @@ Das Projekt wurde im Rahmen des IU-Portfolios entwickelt.
 **Variante A – GitHub Desktop**
 1. **GitHub Desktop** öffnen
 2. **File → Clone repository...**
-3. URL deines Repositories einfügen (z. B. `https://github.com/DEIN-NAME/alphaeditor`)
+3. URL deines Repositories einfügen (z. B. `https://github.com/CemBig/alphaeditor.git`)
 4. Zielordner auswählen und **Clone** klicken
 
 **Variante B – Direkt von GitHub**
