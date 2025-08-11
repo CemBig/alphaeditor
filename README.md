@@ -59,7 +59,7 @@ Jedes Byte wird in **Hexadezimal**, **Binär** und **ASCII** dargestellt.
 **Variante A – GitHub Desktop**
 1. **GitHub Desktop** öffnen
 2. **File → Clone repository...**
-3. URL deines Repositories einfügen (z. B. `https://github.com/CemBig/alphaeditor.git`)
+3. URL deines Repositories einfügen (`https://github.com/CemBig/alphaeditor.git`)
 4. Zielordner auswählen und **Clone** klicken
 
 **Variante B – Direkt von GitHub**
